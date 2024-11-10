@@ -2,32 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #004080;
+    color: white;
+  }
+  
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .navbar nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  
+  .home, .campus, .contact {
+    padding: 2rem;
+  } 
+
+  .campus {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .facilities {
+    display: grid;
+    gap: 16px;
+  }
+  
+  .facility h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .facility p {
+    color: #4a4a4a;
+    margin-bottom: 8px;
+  }
+  
+  /* Small screen (default) */
+  .facilities {
+    grid-template-columns: 1fr;
+  }
+  
+  .facility img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Medium screen */
+  @media (min-width: 768px) {
+    .facilities {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+  
+    .facility h2 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  /* Large screen */
+  @media (min-width: 1024px) {
+    .facilities {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+  
+    .facility h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .home {
+margin-top:20px;
+font-weight:bolder ;
+font-size:xx-large;
+font-family: 'Times New Roman', Times, serif;
+  }
+
+.contact{
+  text-align: center;
+margin-top: 10px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
